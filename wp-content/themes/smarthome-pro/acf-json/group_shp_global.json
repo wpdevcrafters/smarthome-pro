@@ -1,0 +1,64 @@
+{
+    "key": "group_shp_global",
+    "title": "Global Theme Settings",
+    "fields": [
+        {
+            "key": "field_shp_site_logo",
+            "label": "Site Logo",
+            "name": "site_logo",
+            "type": "image",
+            "instructions": "Upload the main site logo. Recommended size: 200×60 px.",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "png,jpg,jpeg,svg,webp",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_shp_header_cta_url",
+            "label": "Header CTA Link",
+            "name": "header_cta_url",
+            "type": "link",
+            "instructions": "Link for the header call-to-action button.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "smarthome-pro-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1781129036
+}

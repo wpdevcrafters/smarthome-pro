@@ -1,0 +1,1744 @@
+/* ==========================================================================
+   SmartHome Pro — Landing Page Stylesheet
+   Version: 1.0.0
+   Description: Production-ready, mobile-first CSS for the SmartHome Pro
+                WordPress theme landing page.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   ========================================================================== */
+
+:root {
+    /* ---- Colors ---- */
+    --shp-primary: #2563EB;
+    --shp-primary-dark: #1D4ED8;
+    --shp-primary-light: #3B82F6;
+    --shp-primary-rgb: 37, 99, 235;
+    --shp-secondary: #1E293B;
+    --shp-secondary-dark: #0F172A;
+    --shp-accent: #10B981;
+    --shp-accent-dark: #059669;
+    --shp-bg: #F8FAFC;
+    --shp-text: #0F172A;
+    --shp-light-text: #64748B;
+    --shp-white: #FFFFFF;
+    --shp-border: #E2E8F0;
+
+    /* ---- Radii ---- */
+    --shp-border-radius: 12px;
+    --shp-border-radius-lg: 16px;
+    --shp-border-radius-full: 50%;
+
+    /* ---- Shadows ---- */
+    --shp-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shp-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shp-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shp-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+    /* ---- Transition ---- */
+    --shp-transition: all 0.3s ease;
+}
+
+
+/* ==========================================================================
+   2. GLOBAL / BASE STYLES
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body,
+html {
+    font-family: 'Inter', sans-serif;
+    color: var(--shp-text);
+    background-color: var(--shp-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--shp-primary);
+    transition: var(--shp-transition);
+}
+
+a:hover {
+    color: var(--shp-primary-dark);
+}
+
+/* Section shared padding — mobile-first */
+section {
+    padding: 60px 0;
+}
+
+/* Hero overrides generic section padding — managed internally */
+section.shp-hero {
+    padding: 0;
+}
+
+/* Section badge (eyebrow above headings) */
+.shp-section-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--shp-primary);
+    background: rgba(var(--shp-primary-rgb), 0.1);
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+/* Centered section header wrapper */
+.shp-section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 48px;
+}
+
+.shp-section-header h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--shp-text);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.shp-section-header p {
+    font-size: 1rem;
+    color: var(--shp-light-text);
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================================
+   3. HEADER / NAVBAR
+   ========================================================================== */
+
+.shp-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    background: transparent;
+    transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Scrolled state */
+.shp-header.scrolled {
+    background: var(--shp-white);
+    box-shadow: var(--shp-shadow-md);
+}
+
+.shp-header.scrolled .shp-logo img {
+    filter: none;
+}
+
+/* Logo */
+.shp-logo img {
+    max-height: 40px;
+    transition: var(--shp-transition);
+}
+
+/* Navbar bootstrap overrides */
+.shp-navbar {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    transition: padding 0.35s ease;
+}
+
+.shp-header.scrolled .shp-navbar {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Nav links */
+.shp-nav-link {
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 8px 16px !important;
+    transition: var(--shp-transition);
+    position: relative;
+}
+
+.shp-nav-link:hover,
+.shp-nav-link:focus {
+    color: var(--shp-white) !important;
+}
+
+.shp-nav-link.active {
+    color: var(--shp-white) !important;
+    font-weight: 600;
+}
+
+.shp-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: var(--shp-primary-light);
+    border-radius: 2px;
+}
+
+/* Scrolled link colors */
+.shp-header.scrolled .shp-nav-link {
+    color: var(--shp-secondary) !important;
+}
+
+.shp-header.scrolled .shp-nav-link:hover,
+.shp-header.scrolled .shp-nav-link:focus,
+.shp-header.scrolled .shp-nav-link.active {
+    color: var(--shp-primary) !important;
+}
+
+.shp-header.scrolled .shp-nav-link.active::after {
+    background: var(--shp-primary);
+}
+
+/* CTA button in nav */
+.shp-cta-btn {
+    display: inline-block;
+    background: var(--shp-primary);
+    color: var(--shp-white) !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: none;
+    transition: var(--shp-transition);
+    text-decoration: none;
+}
+
+.shp-cta-btn:hover {
+    background: var(--shp-primary-dark);
+    color: var(--shp-white) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(var(--shp-primary-rgb), 0.35);
+}
+
+/* Hamburger / toggler */
+.shp-header .navbar-toggler {
+    border: none;
+    padding: 4px 8px;
+    outline: none;
+    box-shadow: none;
+}
+
+.shp-header .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.shp-header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 28px;
+    height: 28px;
+}
+
+.shp-header.scrolled .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2815,23,42,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile offcanvas / collapse dark bg */
+@media (max-width: 991.98px) {
+    .offcanvas {
+        background-color: var(--shp-secondary-dark) !important;
+        color: var(--shp-white) !important;
+    }
+
+    .offcanvas-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 20px 24px;
+    }
+
+    .offcanvas-body .shp-nav-link {
+        color: rgba(255, 255, 255, 0.85) !important;
+        padding: 12px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: block;
+        width: 100%;
+        transition: var(--shp-transition);
+    }
+
+    .offcanvas-body .shp-nav-link:hover,
+    .offcanvas-body .shp-nav-link.active {
+        color: var(--shp-primary-light) !important;
+    }
+
+    .offcanvas-body .shp-nav-link.active::after {
+        display: none;
+    }
+
+    .shp-header .offcanvas-body .shp-cta-btn {
+        margin-top: 12px;
+        text-align: center;
+        display: block;
+    }
+
+    /* Override scrolled link colors inside mobile menu */
+    .shp-header.scrolled .offcanvas-body .shp-nav-link {
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .shp-header.scrolled .offcanvas-body .shp-nav-link:hover,
+    .shp-header.scrolled .offcanvas-body .shp-nav-link.active {
+        color: var(--shp-primary-light) !important;
+    }
+}
+
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+
+.shp-hero {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* Hero inner layout — content area */
+.shp-hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 120px;
+    padding-bottom: 48px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Light gradient overlay — heavy white left, transparent right */
+.shp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        #FFFFFF 0%,
+        rgba(255, 255, 255, 0.97) 35%,
+        rgba(248, 250, 252, 0.82) 55%,
+        rgba(248, 250, 252, 0.35) 75%,
+        rgba(15, 23, 42, 0.05) 100%
+    );
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* Text column */
+.shp-hero-text {
+    max-width: 560px;
+}
+
+/* Eyebrow */
+.shp-hero-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--shp-primary);
+    background: rgba(var(--shp-primary-rgb), 0.1);
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 18px;
+}
+
+/* Hero heading */
+.shp-hero h1 {
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 800;
+    color: var(--shp-text);
+    line-height: 1.18;
+    margin-bottom: 18px;
+    white-space: normal;
+}
+
+/* Hero paragraph */
+.shp-hero p {
+    font-size: 1rem;
+    color: var(--shp-light-text);
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 28px;
+}
+
+/* Buttons row */
+.shp-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 0;
+    align-items: center;
+}
+
+/* Primary button */
+.shp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--shp-primary);
+    color: var(--shp-white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 13px 28px;
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    transition: var(--shp-transition);
+    box-shadow: 0 4px 14px rgba(var(--shp-primary-rgb), 0.4);
+    cursor: pointer;
+}
+
+.shp-btn-primary:hover {
+    background: var(--shp-primary-dark);
+    color: var(--shp-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(var(--shp-primary-rgb), 0.5);
+}
+
+/* Secondary / outline button */
+.shp-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--shp-text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 11px 26px;
+    border-radius: 50px;
+    border: 2px solid var(--shp-border);
+    text-decoration: none;
+    transition: var(--shp-transition);
+    cursor: pointer;
+}
+
+.shp-btn-secondary:hover {
+    background: var(--shp-primary);
+    border-color: var(--shp-primary);
+    color: var(--shp-white);
+}
+
+/* Mockup image column — no top margin, fill height */
+.shp-hero-mockup {
+    text-align: center;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.shp-hero-mockup img {
+    max-width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ---- Stats Bar ---- */
+/* Sits at very bottom of hero section, below hero-content, inside section */
+.shp-stats-bar-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+    background: transparent;
+    padding-bottom: 36px;
+}
+
+.shp-stats-bar {
+    background: var(--shp-white);
+    border: 1px solid var(--shp-border);
+    border-radius: var(--shp-border-radius-lg);
+    box-shadow: var(--shp-shadow-lg);
+    padding: 22px 32px;
+    margin-bottom: 0;
+}
+
+.shp-stat-item {
+    position: relative;
+}
+
+.shp-stat-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: var(--shp-border-radius-full);
+    background: rgba(var(--shp-primary-rgb), 0.1);
+    color: var(--shp-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.shp-stat-number {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--shp-text);
+    line-height: 1.2;
+}
+
+.shp-stat-label {
+    font-size: 0.82rem;
+    color: var(--shp-light-text);
+    margin-top: 2px;
+}
+
+
+/* ==========================================================================
+   5. FEATURES SECTION
+   ========================================================================== */
+
+.shp-features {
+    background: var(--shp-white);
+}
+
+.shp-feature-card {
+    background: var(--shp-white);
+    border-radius: var(--shp-border-radius-lg);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shp-shadow);
+    border: 1px solid var(--shp-border);
+    transition: var(--shp-transition);
+    height: 100%;
+}
+
+.shp-feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shp-shadow-xl);
+    border-color: var(--shp-primary);
+}
+
+/* Icon circle */
+.shp-feature-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--shp-border-radius-full);
+    background: linear-gradient(135deg, rgba(var(--shp-primary-rgb), 0.1) 0%, rgba(var(--shp-primary-rgb), 0.2) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: var(--shp-primary);
+    transition: var(--shp-transition);
+    overflow: hidden;
+}
+
+/* Image icon inside feature card */
+.shp-feature-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: var(--shp-transition);
+}
+
+.shp-feature-card:hover .shp-feature-icon {
+    background: linear-gradient(135deg, var(--shp-primary) 0%, var(--shp-primary-light) 100%);
+    color: var(--shp-white);
+    transform: scale(0.8);
+}
+
+/* Invert image icon to white on hover for SVG/PNG icons */
+/* .shp-feature-card:hover .shp-feature-icon img {
+    filter: brightness(0) invert(1);
+} */
+
+.shp-feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    color: var(--shp-text);
+}
+
+.shp-feature-description {
+    color: var(--shp-light-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.shp-feature-link {
+    color: var(--shp-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--shp-transition);
+}
+
+.shp-feature-link::after {
+    content: '\2192';
+    transition: transform 0.3s ease;
+}
+
+.shp-feature-link:hover {
+    color: var(--shp-primary-dark);
+    gap: 10px;
+}
+
+.shp-feature-link:hover::after {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   6. TESTIMONIALS SECTION
+   ========================================================================== */
+
+.shp-testimonials {
+    background: var(--shp-bg);
+}
+
+/* Swiper container padding for navigation */
+.shp-testimonials-slider {
+    padding: 10px 4px 50px;
+    overflow: hidden;
+}
+
+.shp-testimonial-card {
+    background: var(--shp-white);
+    border-radius: var(--shp-border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shp-shadow);
+    border: 1px solid var(--shp-border);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--shp-transition);
+}
+
+.shp-testimonial-card:hover {
+    box-shadow: var(--shp-shadow-md);
+}
+
+/* Quote icon */
+.shp-testimonial-quote-icon {
+    font-size: 2.5rem;
+    color: rgba(var(--shp-primary-rgb), 0.2);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+/* Star rating */
+.shp-testimonial-rating {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 4px;
+}
+
+.shp-testimonial-rating i {
+    color: #FBBF24;
+    font-size: 0.9rem;
+}
+
+/* Testimonial body text */
+.shp-testimonial-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--shp-text);
+    margin-top: 12px;
+    flex-grow: 1;
+}
+
+/* Author block */
+.shp-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--shp-border);
+}
+
+.shp-testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--shp-border-radius-full);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.shp-testimonial-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.shp-testimonial-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--shp-text);
+    line-height: 1.3;
+}
+
+.shp-testimonial-designation {
+    font-size: 0.85rem;
+    color: var(--shp-light-text);
+}
+
+/* Swiper navigation overrides */
+.shp-testimonials .swiper-button-prev,
+.shp-testimonials .swiper-button-next {
+    color: var(--shp-primary);
+    width: 44px;
+    height: 44px;
+    background: var(--shp-white);
+    border-radius: var(--shp-border-radius-full);
+    box-shadow: var(--shp-shadow-md);
+    transition: var(--shp-transition);
+    top: auto;
+    bottom: 0;
+}
+
+.shp-testimonials .swiper-button-prev::after,
+.shp-testimonials .swiper-button-next::after {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.shp-testimonials .swiper-button-prev:hover,
+.shp-testimonials .swiper-button-next:hover {
+    background: var(--shp-primary);
+    color: var(--shp-white);
+}
+
+.shp-testimonials .swiper-button-prev {
+    left: calc(50% - 56px);
+}
+
+.shp-testimonials .swiper-button-next {
+    right: calc(50% - 56px);
+}
+
+/* Swiper pagination overrides */
+.shp-testimonials .swiper-pagination {
+    bottom: 0 !important;
+    position: relative;
+    margin-top: 24px;
+}
+
+.shp-testimonials .swiper-pagination-bullet {
+    background: var(--shp-primary);
+    opacity: 0.3;
+    width: 10px;
+    height: 10px;
+    transition: var(--shp-transition);
+}
+
+.shp-testimonials .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 28px;
+    border-radius: 5px;
+}
+
+
+/* ==========================================================================
+   7. PRICING SECTION
+   ========================================================================== */
+
+.shp-pricing {
+    background: var(--shp-white);
+}
+
+.shp-pricing-card {
+    background: var(--shp-white);
+    border-radius: var(--shp-border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shp-shadow);
+    border: 1px solid var(--shp-border);
+    transition: var(--shp-transition);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.shp-pricing-card:hover {
+    box-shadow: var(--shp-shadow-xl);
+    transform: translateY(-5px);
+}
+
+/* Featured / popular card */
+.shp-pricing-featured {
+    border: 2px solid var(--shp-primary);
+    box-shadow: var(--shp-shadow-xl);
+    background: linear-gradient(180deg, rgba(var(--shp-primary-rgb), 0.03) 0%, var(--shp-white) 100%);
+}
+
+/* Popular badge */
+.shp-pricing-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--shp-primary);
+    color: var(--shp-white);
+    padding: 5px 22px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(var(--shp-primary-rgb), 0.35);
+}
+
+/* Plan name */
+.shp-pricing-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--shp-text);
+    margin-bottom: 4px;
+}
+
+/* Price block */
+.shp-pricing-price {
+    margin: 20px 0;
+}
+
+.shp-pricing-amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--shp-secondary-dark);
+    line-height: 1;
+}
+
+.shp-pricing-duration {
+    font-size: 1rem;
+    color: var(--shp-light-text);
+}
+
+/* Feature checklist */
+.shp-pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 auto;
+}
+
+.shp-pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    color: var(--shp-text);
+}
+
+.shp-pricing-features li i {
+    color: var(--shp-accent);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Pricing button */
+.shp-pricing-btn {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: var(--shp-transition);
+    cursor: pointer;
+}
+
+/* Non-featured: outline */
+.shp-pricing-btn-outline {
+    background: transparent;
+    color: var(--shp-primary);
+    border: 2px solid var(--shp-primary);
+}
+
+.shp-pricing-btn-outline:hover {
+    background: var(--shp-primary);
+    color: var(--shp-white);
+}
+
+/* Featured: solid */
+.shp-pricing-btn-solid {
+    background: var(--shp-primary);
+    color: var(--shp-white);
+    border: 2px solid var(--shp-primary);
+    box-shadow: 0 4px 14px rgba(var(--shp-primary-rgb), 0.35);
+}
+
+.shp-pricing-btn-solid:hover {
+    background: var(--shp-primary-dark);
+    border-color: var(--shp-primary-dark);
+    color: var(--shp-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(var(--shp-primary-rgb), 0.45);
+}
+
+
+/* ==========================================================================
+   8. CONTACT SECTION
+   ========================================================================== */
+
+.shp-contact {
+    background-image: url('../images/contctbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--shp-white);
+}
+
+/* Info column */
+.shp-contact-info {
+    text-align: left;
+}
+
+.shp-contact-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--shp-accent);
+    background: rgba(16, 185, 129, 0.15);
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+.shp-contact h2 {
+    color: var(--shp-white);
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.shp-contact p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 28px;
+    line-height: 1.8;
+}
+
+/* Benefit list */
+.shp-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.shp-benefit-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    background: var(--shp-accent);
+    border-radius: var(--shp-border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--shp-white);
+    font-size: 0.8rem;
+    overflow: hidden;
+    padding: 7px;
+    flex-shrink: 0;
+}
+
+/* Image icon inside benefit item */
+.shp-benefit-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+.shp-benefit-text {
+    color: var(--shp-white);
+    font-size: 0.95rem;
+}
+
+/* Form card */
+.shp-contact-form-wrapper {
+    background: var(--shp-white);
+    border-radius: var(--shp-border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shp-shadow-xl);
+}
+
+/* ---- Contact Form 7 Overrides ---- */
+.wpcf7 label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--shp-text);
+    margin-bottom: 4px;
+    display: block;
+}
+
+.wpcf7 input[type='text'],
+.wpcf7 input[type='email'],
+.wpcf7 input[type='tel'],
+.wpcf7 input[type='url'],
+.wpcf7 input[type='number'],
+.wpcf7 textarea,
+.wpcf7 select {
+    width: 100%;
+    border: 1px solid var(--shp-border);
+    border-radius: var(--shp-border-radius);
+    padding: 12px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--shp-text);
+    background: var(--shp-white);
+    transition: var(--shp-transition);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.wpcf7 input[type='text']:focus,
+.wpcf7 input[type='email']:focus,
+.wpcf7 input[type='tel']:focus,
+.wpcf7 input[type='url']:focus,
+.wpcf7 input[type='number']:focus,
+.wpcf7 textarea:focus,
+.wpcf7 select:focus {
+    border-color: var(--shp-primary);
+    box-shadow: 0 0 0 3px rgba(var(--shp-primary-rgb), 0.15);
+}
+
+.wpcf7 textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+.wpcf7-submit,
+.wpcf7 input[type='submit'] {
+    display: block;
+    width: 100%;
+    background: var(--shp-primary);
+    color: var(--shp-white);
+    border: none;
+    border-radius: 50px;
+    padding: 14px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--shp-transition);
+    margin-top: 8px;
+}
+
+.wpcf7-submit:hover,
+.wpcf7 input[type='submit']:hover {
+    background: var(--shp-primary-dark);
+    box-shadow: 0 4px 14px rgba(var(--shp-primary-rgb), 0.35);
+    transform: translateY(-1px);
+}
+
+/* CF7 validation messages & states */
+.wpcf7-form-control.wpcf7-not-valid {
+    border-color: #dc3545 !important;
+}
+
+.wpcf7-form-control.wpcf7-not-valid:focus {
+    border-color: var(--shp-primary) !important;
+    box-shadow: 0 0 0 3px rgba(var(--shp-primary-rgb), 0.15) !important;
+}
+
+.wpcf7-not-valid-tip {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* Hide error message on field focus */
+.wpcf7-form-control:focus ~ .wpcf7-not-valid-tip,
+.wpcf7-form-control:focus + .wpcf7-not-valid-tip {
+    display: none !important;
+}
+
+.wpcf7 .wpcf7-response-output {
+    display: none !important;
+}
+
+/* CF7 row spacing in form */
+.wpcf7 p {
+    margin-bottom: 16px;
+    color: var(--shp-text);
+}
+
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+
+.shp-footer {
+    background: var(--shp-secondary);
+    color: var(--shp-white);
+    padding-top: 80px;
+    padding-bottom: 0;
+}
+
+.shp-footer-widget {
+    margin-bottom: 2rem;
+}
+
+/* Logo in footer */
+.shp-footer-logo img {
+    max-height: 40px;
+    margin-bottom: 16px;
+}
+
+.shp-footer-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Widget titles */
+.shp-footer-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--shp-white);
+}
+
+/* Link lists */
+.shp-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shp-footer-links li {
+    margin-bottom: 10px;
+}
+
+.shp-footer-links li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--shp-transition);
+}
+
+.shp-footer-links li a:hover {
+    color: var(--shp-white);
+    padding-left: 4px;
+}
+
+/* Social icons */
+.shp-social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.shp-social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--shp-border-radius-full);
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--shp-white);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--shp-transition);
+}
+
+.shp-social-icon:hover {
+    background: var(--shp-primary);
+    color: var(--shp-white);
+    transform: translateY(-2px);
+}
+
+/* Newsletter form in footer */
+.shp-footer-newsletter .wpcf7-form {
+    position: relative;
+}
+
+.shp-footer-newsletter .shp-newsletter-group {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.shp-footer-newsletter .shp-newsletter-group p, .shp-footer-newsletter .shp-newsletter-group {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border-radius: 50px;
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.shp-footer-newsletter .wpcf7-form-control-wrap {
+    flex-grow: 1;
+}
+
+.shp-footer-newsletter input[type='email'],
+.shp-footer-newsletter input[type='text'] {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: var(--shp-white) !important;
+    padding: 10px 16px !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    width: 100%;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.shp-footer-newsletter input[type='email']::placeholder,
+.shp-footer-newsletter input[type='text']::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.shp-footer-newsletter .wpcf7-submit,
+.shp-footer-newsletter input[type='submit'] {
+    background: var(--shp-primary) !important;
+    color: var(--shp-white) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 10px 24px !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: var(--shp-transition);
+    margin-top: 0 !important;
+    flex-shrink: 0;
+    width: auto !important; /* Prevent button from stretching */
+}
+
+.shp-footer-newsletter .wpcf7-submit:hover,
+.shp-footer-newsletter input[type='submit']:hover {
+    background: var(--shp-primary-dark) !important;
+    box-shadow: 0 4px 12px rgba(var(--shp-primary-rgb), 0.3);
+}
+
+/* Absolute position for newsletter validation tip so it doesn't break layout */
+.shp-footer-newsletter .wpcf7-not-valid-tip {
+    position: absolute;
+    bottom: -35px;
+    left: 16px;
+    font-size: 0.8rem;
+    color: #dc3545;
+}
+
+/* Show red border on the newsletter pill when its input is invalid */
+.shp-footer-newsletter .shp-newsletter-group:has(.wpcf7-not-valid) {
+    border-color: #dc3545 !important;
+}
+
+/* Clear red border on focus of the invalid field */
+.shp-footer-newsletter .shp-newsletter-group:has(.wpcf7-form-control:focus) {
+    border-color: var(--shp-primary) !important;
+    box-shadow: 0 0 0 3px rgba(var(--shp-primary-rgb), 0.15) !important;
+}
+
+/* Contact info items */
+.shp-footer-contact-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    align-items: flex-start;
+    transition: var(--shp-transition);
+}
+
+.shp-footer-contact-item a {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: underline !important;
+    transition: var(--shp-transition);
+}
+
+.shp-footer-contact-item a:hover {
+    color: #2563EB !important;
+}
+
+.shp-footer-contact-item i {
+    color: var(--shp-primary-light);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: var(--shp-transition);
+}
+
+.shp-footer-contact-item:hover i {
+    color: #2563EB;
+}
+
+/* Bottom bar */
+.shp-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 32px;
+    padding: 20px 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+.shp-footer-bottom a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+.shp-footer-bottom a:hover {
+    color: var(--shp-white);
+}
+
+
+/* ==========================================================================
+   10. BACK TO TOP BUTTON
+   ========================================================================== */
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--shp-border-radius-full);
+    background: var(--shp-primary);
+    color: var(--shp-white);
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--shp-transition);
+    z-index: 999;
+    box-shadow: 0 4px 14px rgba(var(--shp-primary-rgb), 0.4);
+}
+
+#backToTop.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background: var(--shp-primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(var(--shp-primary-rgb), 0.5);
+}
+
+
+/* ==========================================================================
+   11. ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+/* Floating animation for hero mockup */
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Fade in up (used as base keyframes reference) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll-triggered animation class */
+.shp-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.shp-animate.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for cards in a row */
+.shp-animate[data-delay="1"] { transition-delay: 0.1s; }
+.shp-animate[data-delay="2"] { transition-delay: 0.2s; }
+.shp-animate[data-delay="3"] { transition-delay: 0.3s; }
+.shp-animate[data-delay="4"] { transition-delay: 0.4s; }
+.shp-animate[data-delay="5"] { transition-delay: 0.5s; }
+.shp-animate[data-delay="6"] { transition-delay: 0.6s; }
+
+
+/* ==========================================================================
+   12. UTILITY HELPERS
+   ========================================================================== */
+
+.shp-text-primary { color: var(--shp-primary) !important; }
+.shp-text-accent  { color: var(--shp-accent) !important; }
+.shp-bg-primary   { background-color: var(--shp-primary) !important; }
+.shp-bg-accent    { background-color: var(--shp-accent) !important; }
+
+
+/* ==========================================================================
+   13. RESPONSIVE — TABLET (≥ 768px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+
+    section {
+        padding: 80px 0;
+    }
+
+    section.shp-hero {
+        padding: 0;
+    }
+
+    .shp-section-header h2 {
+        font-size: 2rem;
+    }
+
+    /* Hero */
+    .shp-hero h1 {
+        font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    }
+
+    .shp-hero-mockup {
+        margin-top: 0;
+    }
+
+    /* Stats bar — dividers */
+    .shp-stats-bar {
+        padding: 22px 36px;
+    }
+
+    .shp-stat-item:not(:last-child) {
+        border-right: 1px solid var(--shp-border);
+    }
+
+    /* Contact form wrapper */
+    .shp-contact-form-wrapper {
+        padding: 2.5rem;
+    }
+
+    /* Contact heading */
+    .shp-contact h2 {
+        font-size: 2rem;
+    }
+
+    /* Pricing featured — scale up */
+    .shp-pricing-featured {
+        transform: scale(1.05);
+    }
+
+    .shp-pricing-featured:hover {
+        transform: scale(1.05) translateY(-5px);
+    }
+}
+
+
+/* ==========================================================================
+   14. RESPONSIVE — DESKTOP (≥ 1200px)
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+
+    section {
+        padding: 100px 0;
+    }
+
+    section.shp-hero {
+        padding: 0;
+    }
+
+    .shp-section-header h2 {
+        font-size: 2.25rem;
+    }
+
+    /* Hero */
+    .shp-hero-content {
+        padding-top: 130px;
+        padding-bottom: 52px;
+    }
+
+    .shp-hero h1 {
+        font-size: clamp(2.4rem, 3vw, 3rem);
+    }
+
+    .shp-hero p {
+        font-size: 1.05rem;
+    }
+
+    .shp-hero-mockup img {
+        max-height: 480px;
+    }
+
+    /* Stats bar positioning */
+    .shp-stats-bar {
+        padding: 24px 40px;
+    }
+
+    .shp-stat-number {
+        font-size: 1.6rem;
+    }
+
+    /* Contact heading */
+    .shp-contact h2 {
+        font-size: 2.25rem;
+    }
+
+    /* Testimonial nav arrows beside slider */
+    .shp-testimonials-slider {
+        margin-left: -50px;
+        margin-right: -50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .shp-testimonials .swiper-button-prev {
+        left: 10px;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        margin-top: 0;
+    }
+
+    .shp-testimonials .swiper-button-next {
+        right: 10px;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        margin-top: 0;
+    }
+}
+
+
+/* ==========================================================================
+   15. RESPONSIVE — MOBILE OVERRIDES (≤ 991.98px)
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+
+    /* Hero stacking */
+    .shp-hero-content {
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 32px;
+    }
+
+    .shp-hero-text {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .shp-hero p {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .shp-hero-buttons {
+        justify-content: center;
+    }
+
+    .shp-hero-mockup {
+        margin-top: 28px;
+        justify-content: center;
+    }
+
+    /* Contact info center on mobile */
+    .shp-contact-info {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    /* .shp-benefit-item {
+        justify-content: center;
+    } */
+}
+
+
+/* ==========================================================================
+   16. RESPONSIVE — SMALL MOBILE (≤ 767.98px)
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+
+    section {
+        padding: 48px 0;
+    }
+
+    section.shp-hero {
+        padding: 0;
+    }
+
+    .shp-section-header {
+        margin-bottom: 32px;
+    }
+
+    .shp-section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Hero */
+    .shp-hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .shp-hero p {
+        font-size: 0.95rem;
+    }
+
+    .shp-btn-primary,
+    .shp-btn-secondary {
+        padding: 12px 22px;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .shp-hero-buttons {
+        flex-direction: column;
+    }
+
+    /* Stats bar padding on mobile */
+    .shp-stats-bar {
+        padding: 20px 16px;
+    }
+
+    /* Feature cards */
+    .shp-feature-card {
+        padding: 1.5rem;
+    }
+
+    .shp-feature-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 1.5rem;
+    }
+
+    /* Testimonial cards */
+    .shp-testimonial-card {
+        padding: 1.5rem;
+    }
+
+    /* Pricing — featured no scale on mobile */
+    .shp-pricing-featured {
+        transform: scale(1);
+    }
+
+    .shp-pricing-featured:hover {
+        transform: translateY(-5px);
+    }
+
+    .shp-pricing-amount {
+        font-size: 2.5rem;
+    }
+
+    /* Contact form wrapper */
+    .shp-contact-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .shp-contact h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Footer — reduce padding */
+    .shp-footer {
+        padding-top: 48px;
+    }
+
+    /* Swiper nav arrows — hide on mobile, rely on pagination */
+    .shp-testimonials .swiper-button-prev,
+    .shp-testimonials .swiper-button-next {
+        display: none;
+    }
+}
+
+
+/* ==========================================================================
+   17. WORDPRESS & PLUGIN COMPATIBILITY
+   ========================================================================== */
+
+/* Remove default WP admin bar spacing interference */
+.admin-bar .shp-header {
+    top: 32px;
+}
+
+@media (max-width: 782px) {
+    .admin-bar .shp-header {
+        top: 46px;
+    }
+}
+
+/* Ensure container max-width consistency */
+.shp-hero .container,
+.shp-features .container,
+.shp-testimonials .container,
+.shp-pricing .container,
+.shp-contact .container,
+.shp-footer .container {
+    max-width: 1320px;
+}
+
+/* Reset WP image alignment if it leaks in */
+.shp-hero-mockup img.alignnone,
+.shp-hero-mockup img.aligncenter {
+    margin: 0 auto;
+    display: block;
+}
+
+/* Swiper slide height alignment */
+.shp-testimonials-slider .swiper-slide {
+    height: auto;
+}
+
+/* WP block editor compat — prevent .entry-content override */
+.page-template-landing-page .entry-content {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Prevent CF7 spinner from misaligning */
+.wpcf7 .wpcf7-spinner {
+    margin: 12px auto 0;
+    display: block;
+}

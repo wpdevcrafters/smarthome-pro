@@ -1,0 +1,47 @@
+# WordPress core files
+wp-admin/
+wp-includes/
+
+# Local config
+wp-config.php
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# WordPress uploads and temporary files
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+wp-content/backups/
+wp-content/ai1wm-backups/
+
+# Composer files
+/vendor/
+
+# npm files
+node_modules/
+
+# Sensitive files
+.env
+.env.*
+
+# Ignore backup and system files
+*.zip
+*.tar.gz
+*.rar
+*.tmp
+
+# Ignore generated files
+.sass-cache/
+.cache/
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/

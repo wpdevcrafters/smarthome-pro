@@ -1,0 +1,23 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="url(#homeGrad)"/>
+
+  <path d="M18 30L32 18L46 30"
+        stroke="white"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <path d="M22 28V46H30V37H34V46H42V28"
+        stroke="white"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+
+  <defs>
+    <linearGradient id="homeGrad" x1="2" y1="32" x2="62" y2="32">
+      <stop stop-color="#2F80FF"/>
+      <stop offset="1" stop-color="#0D5BEA"/>
+    </linearGradient>
+  </defs>
+</svg>

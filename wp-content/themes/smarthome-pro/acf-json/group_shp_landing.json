@@ -1,0 +1,1000 @@
+{
+    "key": "group_shp_landing",
+    "title": "Landing Page Settings",
+    "fields": [
+        {
+            "key": "field_shp_hero_tab",
+            "label": "Hero Section",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_shp_hero_background_image",
+            "label": "Hero Background Image",
+            "name": "hero_background_image",
+            "type": "image",
+            "instructions": "Upload a high-resolution background image. Recommended: 1920×1080 px.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "png,jpg,jpeg,webp",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_shp_hero_mockup_image",
+            "label": "Hero Mockup Image",
+            "name": "hero_mockup_image",
+            "type": "image",
+            "instructions": "Upload a product mockup or app screenshot to display in the hero section.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "mime_types": "png,jpg,jpeg,webp,svg",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_shp_hero_eyebrow",
+            "label": "Hero Eyebrow Text",
+            "name": "hero_eyebrow",
+            "type": "text",
+            "instructions": "Small text displayed above the main heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "🏠 The Future of Smart Living",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_hero_heading",
+            "label": "Hero Heading",
+            "name": "hero_heading",
+            "type": "text",
+            "instructions": "Main hero headline. Keep it concise and impactful.",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "The Ultimate Smart Home Solution",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_hero_description",
+            "label": "Hero Description",
+            "name": "hero_description",
+            "type": "textarea",
+            "instructions": "Supporting text below the hero heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "br",
+            "placeholder": "Transform your home into an intelligent, connected ecosystem.",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_shp_hero_primary_button_text",
+            "label": "Primary Button Text",
+            "name": "hero_primary_button_text",
+            "type": "text",
+            "instructions": "Text for the primary call-to-action button.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Start Free Trial",
+            "default_value": "Start Free Trial",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_hero_primary_button_url",
+            "label": "Primary Button Link",
+            "name": "hero_primary_button_url",
+            "type": "link",
+            "instructions": "Link for the primary call-to-action button.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_shp_hero_secondary_button_text",
+            "label": "Secondary Button Text",
+            "name": "hero_secondary_button_text",
+            "type": "text",
+            "instructions": "Text for the secondary (outline) button.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Watch Demo",
+            "default_value": "Watch Demo",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_hero_secondary_button_url",
+            "label": "Secondary Button Link",
+            "name": "hero_secondary_button_url",
+            "type": "link",
+            "instructions": "Link for the secondary button.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_shp_hero_statistics_repeater",
+            "label": "Hero Statistics",
+            "name": "hero_statistics_repeater",
+            "type": "repeater",
+            "instructions": "Add up to 4 statistics displayed below the hero buttons.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 4,
+            "layout": "table",
+            "button_label": "Add Statistic",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_shp_stat_number",
+                    "label": "Stat Number",
+                    "name": "stat_number",
+                    "type": "text",
+                    "instructions": "e.g. 50K+, 99.9%, 4.8\/5",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "50K+",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shp_stat_label",
+                    "label": "Stat Label",
+                    "name": "stat_label",
+                    "type": "text",
+                    "instructions": "e.g. Active Users, Uptime, Rating",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Active Users",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_shp_features_tab",
+            "label": "Features Section",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_shp_features_badge",
+            "label": "Section Badge",
+            "name": "features_badge",
+            "type": "text",
+            "instructions": "Small badge text above the section heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Features",
+            "default_value": "Features",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_features_heading",
+            "label": "Section Heading",
+            "name": "features_heading",
+            "type": "text",
+            "instructions": "Main heading for the features section.",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Everything You Need for a Smarter Home",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_features_description",
+            "label": "Section Description",
+            "name": "features_description",
+            "type": "textarea",
+            "instructions": "Supporting text below the features heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "br",
+            "placeholder": "Discover how SmartHome Pro transforms your living space.",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_shp_features_repeater",
+            "label": "Features",
+            "name": "features_repeater",
+            "type": "repeater",
+            "instructions": "Add individual feature cards.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "layout": "block",
+            "button_label": "Add Feature",
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_shp_feature_icon",
+                    "label": "Feature Icon",
+                    "name": "feature_icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_shp_feature_title",
+                    "label": "Feature Title",
+                    "name": "feature_title",
+                    "type": "text",
+                    "instructions": "Title for this feature card.",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Smart Automation",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shp_feature_description",
+                    "label": "Feature Description",
+                    "name": "feature_description",
+                    "type": "textarea",
+                    "instructions": "Brief description of this feature.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 3,
+                    "new_lines": "br",
+                    "placeholder": "Automate your home with intelligent routines.",
+                    "default_value": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_shp_feature_link",
+                    "label": "Feature Link",
+                    "name": "feature_link",
+                    "type": "link",
+                    "instructions": "Optional link for \"Learn More\".",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_shp_testimonials_tab",
+            "label": "Testimonials Section",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_shp_testimonials_badge",
+            "label": "Section Badge",
+            "name": "testimonials_badge",
+            "type": "text",
+            "instructions": "Small badge text above the section heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Testimonials",
+            "default_value": "Testimonials",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_testimonials_heading",
+            "label": "Section Heading",
+            "name": "testimonials_heading",
+            "type": "text",
+            "instructions": "Main heading for the testimonials section.",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "What Our Customers Say",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_testimonials_description",
+            "label": "Section Description",
+            "name": "testimonials_description",
+            "type": "textarea",
+            "instructions": "Supporting text below the testimonials heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "br",
+            "placeholder": "Hear from homeowners who transformed their living spaces.",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_shp_testimonials_repeater",
+            "label": "Testimonials",
+            "name": "testimonials_repeater",
+            "type": "repeater",
+            "instructions": "Add customer testimonials.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "layout": "block",
+            "button_label": "Add Testimonial",
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_shp_customer_image",
+                    "label": "Customer Photo",
+                    "name": "customer_image",
+                    "type": "image",
+                    "instructions": "Upload a customer avatar. Recommended: 100×100 px.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "mime_types": "png,jpg,jpeg,webp",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0
+                },
+                {
+                    "key": "field_shp_customer_name",
+                    "label": "Customer Name",
+                    "name": "customer_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Jane Doe",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shp_customer_designation",
+                    "label": "Customer Designation",
+                    "name": "customer_designation",
+                    "type": "text",
+                    "instructions": "Job title or role.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Homeowner",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shp_customer_rating",
+                    "label": "Rating",
+                    "name": "customer_rating",
+                    "type": "number",
+                    "instructions": "Star rating from 1 to 5.",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 5,
+                    "min": 1,
+                    "max": 5,
+                    "step": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shp_customer_review",
+                    "label": "Review Text",
+                    "name": "customer_review",
+                    "type": "textarea",
+                    "instructions": "The customer's testimonial text.",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 4,
+                    "new_lines": "br",
+                    "placeholder": "SmartHome Pro completely transformed our home...",
+                    "default_value": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_shp_pricing_tab",
+            "label": "Pricing Section",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_shp_pricing_badge",
+            "label": "Section Badge",
+            "name": "pricing_badge",
+            "type": "text",
+            "instructions": "Small badge text above the section heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Pricing",
+            "default_value": "Pricing",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_pricing_heading",
+            "label": "Section Heading",
+            "name": "pricing_heading",
+            "type": "text",
+            "instructions": "Main heading for the pricing section.",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Simple, Transparent Pricing",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_pricing_description",
+            "label": "Section Description",
+            "name": "pricing_description",
+            "type": "textarea",
+            "instructions": "Supporting text below the pricing heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "br",
+            "placeholder": "Choose the plan that fits your home.",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_shp_pricing_repeater",
+            "label": "Pricing Plans",
+            "name": "pricing_repeater",
+            "type": "repeater",
+            "instructions": "Add up to 4 pricing plans.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 4,
+            "layout": "block",
+            "button_label": "Add Plan",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_shp_plan_name",
+                    "label": "Plan Name",
+                    "name": "plan_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Professional",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shp_plan_price",
+                    "label": "Plan Price",
+                    "name": "plan_price",
+                    "type": "text",
+                    "instructions": "Price amount including currency symbol, e.g. $29",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "$29",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shp_plan_duration",
+                    "label": "Plan Duration",
+                    "name": "plan_duration",
+                    "type": "text",
+                    "instructions": "Billing cycle text, e.g. \/month, \/year",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "\/month",
+                    "default_value": "\/month",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shp_plan_features",
+                    "label": "Plan Features",
+                    "name": "plan_features",
+                    "type": "textarea",
+                    "instructions": "One feature per line. Each line will be displayed as a checklist item.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 6,
+                    "new_lines": "",
+                    "placeholder": "Up to 10 devices\nBasic automation\nEmail support\n7-day free trial",
+                    "default_value": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_shp_plan_button_url",
+                    "label": "Button Link",
+                    "name": "plan_button_url",
+                    "type": "link",
+                    "instructions": "Link for the plan button.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_shp_is_featured",
+                    "label": "Featured Plan?",
+                    "name": "is_featured",
+                    "type": "true_false",
+                    "instructions": "Mark this plan as featured\/recommended to highlight it.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Yes",
+                    "ui_off_text": "No",
+                    "message": ""
+                }
+            ]
+        },
+        {
+            "key": "field_shp_contact_tab",
+            "label": "Contact Section",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_shp_contact_badge",
+            "label": "Section Badge",
+            "name": "contact_badge",
+            "type": "text",
+            "instructions": "Small badge text above the section heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Contact Us",
+            "default_value": "Contact Us",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_contact_heading",
+            "label": "Section Heading",
+            "name": "contact_heading",
+            "type": "text",
+            "instructions": "Main heading for the contact section.",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Get in Touch",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shp_contact_description",
+            "label": "Section Description",
+            "name": "contact_description",
+            "type": "textarea",
+            "instructions": "Supporting text below the contact heading.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "br",
+            "placeholder": "Have questions? We'd love to hear from you.",
+            "default_value": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_shp_contact_benefits_repeater",
+            "label": "Contact Benefits",
+            "name": "contact_benefits_repeater",
+            "type": "repeater",
+            "instructions": "List of benefits displayed alongside the contact form.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "layout": "table",
+            "button_label": "Add Benefit",
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_shp_benefit_icon",
+                    "label": "Icon",
+                    "name": "benefit_icon",
+                    "type": "image",
+                    "instructions": "Bootstrap Icon class, e.g. <code>bi-shield-check<\/code>",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_shp_benefit_text",
+                    "label": "Benefit Text",
+                    "name": "benefit_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "24\/7 Expert Support",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_shp_contact_form_shortcode",
+            "label": "Contact Form Shortcode",
+            "name": "contact_form_shortcode",
+            "type": "text",
+            "instructions": "Paste your Contact Form 7 shortcode here, e.g. <code>[contact-form-7 id=\"123\" title=\"Contact Form\"]<\/code>",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "[contact-form-7 id=\"123\" title=\"Contact Form\"]",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-smarthome-pro.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1781118326
+}

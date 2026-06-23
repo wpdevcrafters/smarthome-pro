@@ -1,0 +1,21 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="url(#boltGrad)"/>
+
+  <path d="M35 14
+           L21 36
+           H31
+           L29 50
+           L43 28
+           H33
+           L35 14Z"
+        fill="white"
+        stroke="white"
+        stroke-linejoin="round"/>
+
+  <defs>
+    <linearGradient id="boltGrad" x1="2" y1="32" x2="62" y2="32">
+      <stop stop-color="#FFC31A"/>
+      <stop offset="1" stop-color="#FFA300"/>
+    </linearGradient>
+  </defs>
+</svg>
