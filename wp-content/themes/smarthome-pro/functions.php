@@ -69,3 +69,14 @@ if ( class_exists( 'ACF' ) ) {
 		}
 	);
 }
+
+/**
+ * Load custom REST API endpoints for headless support.
+ */
+require_once SHP_THEME_DIR . '/inc/rest-endpoints.php';
+
+/**
+ * Load custom Contact Form 7 database log and Entries dashboard submenu.
+ */
+require_once SHP_THEME_DIR . '/inc/form-entries.php';
+
